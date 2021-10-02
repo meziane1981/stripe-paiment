@@ -4,8 +4,9 @@ if(isset($_POST['prix']) && !empty($_POST['prix'])){
     $prix = (float)$_POST['prix'];
 
     // On instancie Stripe
-    \Stripe\Stripe::setApiKey('VOTRE_CLE_PRIVEE');
-
+    // \Stripe\Stripe::setApiKey('VOTRE_CLE_PRIVEE');
+    \Stripe\Stripe::setApiKey('sk_test_51JfONNAEcI2cqmHuyph6DhVKT6VBpJBNAwtAieqbryfkzFPFtYHL7Pf7OV4jpFvsxAJXVU6ZiW1qrZdWKJbyvlWn0001OOQhXu');
+   //crée intenion de paiment 
     $intent = \Stripe\PaymentIntent::create([
         'amount' => $prix*100,
         'currency' => 'eur'
